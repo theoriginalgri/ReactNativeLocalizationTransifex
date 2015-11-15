@@ -1,6 +1,6 @@
 # ReactNativeLocalization transifex example
 
-Example to illustrate how to use with transifex.
+Example to illustrate how to use ReactNativeLocalization with transifex.
 
 ## What it does
 
