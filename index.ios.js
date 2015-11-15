@@ -1,53 +1,39 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
 'use strict';
 
 var React = require('react-native');
 var {
-  AppRegistry,
-  StyleSheet,
   Text,
   View,
+  AppRegistry,
+  StyleSheet,
 } = React;
 
-var ReactNativeLocalizationTransifex = React.createClass({
+var LocalizedStrings = require('react-native-localization');
+var strings = new LocalizedStrings({
+  en: require('./translation/en.json'),
+  de: require('./translation/de.json')
+});
+
+var MainView = React.createClass({
   render: function() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+      <View style={styles.main}>
+        <Text style={styles.headline}>{strings.headline}</Text>
+        <Text>{strings.subtext}</Text>
       </View>
     );
-  }
+  },
 });
 
 var styles = StyleSheet.create({
-  container: {
+  headline: {
+    fontSize: 20
+  },
+  main: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+    justifyContent: 'center'
+  }
+})
 
-AppRegistry.registerComponent('ReactNativeLocalizationTransifex', () => ReactNativeLocalizationTransifex);
+AppRegistry.registerComponent('ReactNativeLocalizationTransifex', () => MainView);
