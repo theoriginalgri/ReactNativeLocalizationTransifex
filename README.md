@@ -4,7 +4,7 @@ Example to illustrate how to use ReactNativeLocalization with transifex.
 
 ## What it does
 
-This is a sample app that only contains two strings in centered in a view.
+This is a sample app that only contains two strings centered in a view.
 
 Translations are done for German, all other languages fall back to English.
 
